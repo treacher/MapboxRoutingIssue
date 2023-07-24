@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import MapboxCoreNavigation
 
 @main
 struct MapboxRoutingIssueApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  init() {
+    NavigationSettings.shared.initialize(with: .init(
+      alternativeRouteDetectionStrategy: AlternativeRouteDetectionStrategy?.none))
+  }
+
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }

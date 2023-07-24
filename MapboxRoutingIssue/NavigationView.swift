@@ -17,9 +17,19 @@ struct NavigationView: UIViewControllerRepresentable {
 
   public let indexedRouteResponse: IndexedRouteResponse
   public let routeOptions: RouteOptions
-  public let navigationOptions: NavigationOptions?
 
   public func makeUIViewController(context: Context) -> NavigationViewController {
+    let navigationService = MapboxNavigationService(
+      indexedRouteResponse: indexedRouteResponse,
+      customRoutingProvider: nil,
+      credentials: NavigationSettings.shared.directions.credentials
+    )
+
+    navigationService.router.reroutesProactively = false
+    navigationService.router.refreshesRoute = false
+
+    let navigationOptions = NavigationOptions(navigationService: navigationService)
+
     let navigationViewController = NavigationViewController(
       for: indexedRouteResponse,
       navigationOptions: navigationOptions

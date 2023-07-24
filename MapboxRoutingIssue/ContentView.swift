@@ -14,6 +14,7 @@ import MapboxMaps
 
 struct ContentView: View {
   @State private var response: RouteResponse?
+  @State private var routeOptions: NavigationRouteOptions?
   @State private var showNavigation: Bool = false {
     didSet {
       if !showNavigation {
@@ -35,21 +36,31 @@ struct ContentView: View {
   var body: some View {
     VStack {
       Spacer()
-      Button("Test Route") {
-        Task {
-          let waypoints = generateWaypoints(startingLocation: locationManager.location?.coordinate, coordinates: coordinates)
-          let routeOptions = NavigationRouteOptions(waypoints: waypoints, profileIdentifier: .automobile)
-
-          routeOptions.includesAlternativeRoutes = false
-
-          self.response = try await Directions.shared.calculate(options: routeOptions)
+      if response != nil {
+        Button("Test Route") {
+          showNavigation = true
         }
+        .fullScreenCover(isPresented: $showNavigation) {
+          NavigationView(
+            indexedRouteResponse: IndexedRouteResponse(routeResponse: response!, routeIndex: 0),
+            routeOptions: routeOptions!
+          ).ignoresSafeArea()
+        }
+      } else {
+        ProgressView()
       }
       Spacer()
     }
     .padding()
     .task {
       locationManager.requestWhenInUseAuthorization()
+
+      let waypoints = generateWaypoints(startingLocation: locationManager.location?.coordinate, coordinates: coordinates)
+
+      routeOptions = NavigationRouteOptions(waypoints: waypoints, profileIdentifier: .automobile)
+      routeOptions!.includesAlternativeRoutes = false
+
+      self.response = try? await Directions.shared.calculate(options: routeOptions!)
     }
   }
 

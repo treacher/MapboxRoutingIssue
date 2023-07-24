@@ -45,7 +45,6 @@
 		864DE32C2A6E3135007FA622 = {
 			isa = PBXGroup;
 			children = (
-				864DE3552A6E3A33007FA622 /* Config.xcconfig */,
 				864DE3372A6E3135007FA622 /* MapboxRoutingIssue */,
 				864DE3362A6E3135007FA622 /* Products */,
 			);
@@ -62,6 +61,7 @@
 		864DE3372A6E3135007FA622 /* MapboxRoutingIssue */ = {
 			isa = PBXGroup;
 			children = (
+				864DE3552A6E3A33007FA622 /* Config.xcconfig */,
 				864DE3542A6E39FF007FA622 /* Info.plist */,
 				864DE3382A6E3135007FA622 /* MapboxRoutingIssueApp.swift */,
 				864DE33A2A6E3135007FA622 /* ContentView.swift */,
@@ -170,6 +170,7 @@
 /* Begin XCBuildConfiguration section */
 		864DE3412A6E3136007FA622 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 864DE3552A6E3A33007FA622 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -230,6 +231,7 @@
 		};
 		864DE3422A6E3136007FA622 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 864DE3552A6E3A33007FA622 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
