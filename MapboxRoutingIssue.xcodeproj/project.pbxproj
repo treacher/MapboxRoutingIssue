@@ -11,6 +11,10 @@
 		864DE33B2A6E3135007FA622 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DE33A2A6E3135007FA622 /* ContentView.swift */; };
 		864DE33D2A6E3136007FA622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864DE33C2A6E3136007FA622 /* Assets.xcassets */; };
 		864DE3402A6E3136007FA622 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864DE33F2A6E3136007FA622 /* Preview Assets.xcassets */; };
+		864DE3482A6E32BF007FA622 /* MapboxCoreNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 864DE3472A6E32BF007FA622 /* MapboxCoreNavigation */; };
+		864DE34A2A6E32BF007FA622 /* MapboxNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 864DE3492A6E32BF007FA622 /* MapboxNavigation */; };
+		864DE34C2A6E32EB007FA622 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DE34B2A6E32EB007FA622 /* NavigationView.swift */; };
+		864DE3532A6E34E0007FA622 /* Directions+AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DE3522A6E34E0007FA622 /* Directions+AsyncAwait.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,9 @@
 		864DE33A2A6E3135007FA622 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		864DE33C2A6E3136007FA622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		864DE33F2A6E3136007FA622 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		864DE34B2A6E32EB007FA622 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		864DE3522A6E34E0007FA622 /* Directions+AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Directions+AsyncAwait.swift"; sourceTree = "<group>"; };
+		864DE3542A6E39FF007FA622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				864DE3482A6E32BF007FA622 /* MapboxCoreNavigation in Frameworks */,
+				864DE34A2A6E32BF007FA622 /* MapboxNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +60,13 @@
 		864DE3372A6E3135007FA622 /* MapboxRoutingIssue */ = {
 			isa = PBXGroup;
 			children = (
+				864DE3542A6E39FF007FA622 /* Info.plist */,
 				864DE3382A6E3135007FA622 /* MapboxRoutingIssueApp.swift */,
 				864DE33A2A6E3135007FA622 /* ContentView.swift */,
 				864DE33C2A6E3136007FA622 /* Assets.xcassets */,
 				864DE33E2A6E3136007FA622 /* Preview Content */,
+				864DE34B2A6E32EB007FA622 /* NavigationView.swift */,
+				864DE3522A6E34E0007FA622 /* Directions+AsyncAwait.swift */,
 			);
 			path = MapboxRoutingIssue;
 			sourceTree = "<group>";
@@ -83,6 +95,10 @@
 			dependencies = (
 			);
 			name = MapboxRoutingIssue;
+			packageProductDependencies = (
+				864DE3472A6E32BF007FA622 /* MapboxCoreNavigation */,
+				864DE3492A6E32BF007FA622 /* MapboxNavigation */,
+			);
 			productName = MapboxRoutingIssue;
 			productReference = 864DE3352A6E3135007FA622 /* MapboxRoutingIssue.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 864DE32C2A6E3135007FA622;
+			packageReferences = (
+				864DE3462A6E32BF007FA622 /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */,
+			);
 			productRefGroup = 864DE3362A6E3135007FA622 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				864DE33B2A6E3135007FA622 /* ContentView.swift in Sources */,
+				864DE3532A6E34E0007FA622 /* Directions+AsyncAwait.swift in Sources */,
+				864DE34C2A6E32EB007FA622 /* NavigationView.swift in Sources */,
 				864DE3392A6E3135007FA622 /* MapboxRoutingIssueApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +291,9 @@
 				DEVELOPMENT_TEAM = EQ4BVMTSB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapboxRoutingIssue/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need access to your location for turn by turn navigation for the test routes.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location for turn by turn navigation for the test routes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +323,9 @@
 				DEVELOPMENT_TEAM = EQ4BVMTSB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapboxRoutingIssue/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need access to your location for turn by turn navigation for the test routes.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location for turn by turn navigation for the test routes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +366,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		864DE3462A6E32BF007FA622 /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-navigation-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		864DE3472A6E32BF007FA622 /* MapboxCoreNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 864DE3462A6E32BF007FA622 /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */;
+			productName = MapboxCoreNavigation;
+		};
+		864DE3492A6E32BF007FA622 /* MapboxNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 864DE3462A6E32BF007FA622 /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */;
+			productName = MapboxNavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 864DE32D2A6E3135007FA622 /* Project object */;
 }
