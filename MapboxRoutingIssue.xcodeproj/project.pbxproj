@@ -26,6 +26,7 @@
 		864DE34B2A6E32EB007FA622 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		864DE3522A6E34E0007FA622 /* Directions+AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Directions+AsyncAwait.swift"; sourceTree = "<group>"; };
 		864DE3542A6E39FF007FA622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		864DE3552A6E3A33007FA622 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		864DE32C2A6E3135007FA622 = {
 			isa = PBXGroup;
 			children = (
+				864DE3552A6E3A33007FA622 /* Config.xcconfig */,
 				864DE3372A6E3135007FA622 /* MapboxRoutingIssue */,
 				864DE3362A6E3135007FA622 /* Products */,
 			);
