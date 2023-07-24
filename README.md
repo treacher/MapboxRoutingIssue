@@ -7,7 +7,7 @@ and ended up on a path that already exists on the route but this seems to be whe
 
 ## Setup
 
-1. Checking this repository.
+1. Checkout this repository.
 2. Add a Configurations file with your mapbox credentials:
   ```
     # Config.xcconfig
